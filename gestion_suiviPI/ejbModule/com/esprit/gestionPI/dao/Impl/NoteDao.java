@@ -2,12 +2,13 @@ package com.esprit.gestionPI.dao.Impl;
 
 import java.util.Set;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.esprit.gestionPI.dao.NoteDaoRemote;
 import com.esprit.gestionPI.persistence.Note;
-
+@Stateless
 public class NoteDao implements NoteDaoRemote {
 @PersistenceContext
 EntityManager em;

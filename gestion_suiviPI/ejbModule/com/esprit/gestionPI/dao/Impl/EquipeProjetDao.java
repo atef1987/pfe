@@ -2,12 +2,13 @@ package com.esprit.gestionPI.dao.Impl;
 
 import java.util.Set;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.esprit.gestionPI.dao.EquipeProjetDaoRemote;
 import com.esprit.gestionPI.persistence.EquipeProjet;
-
+@Stateless
 public class EquipeProjetDao implements EquipeProjetDaoRemote {
 @PersistenceContext 
 EntityManager em;
