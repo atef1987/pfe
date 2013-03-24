@@ -12,4 +12,14 @@
    <value/>
   </managed-property>
  </managed-bean>
+ <managed-bean>
+  <managed-bean-name>pICtrl</managed-bean-name>
+  <managed-bean-class>crtl.PICtrl</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>pi</property-name>
+   <property-class>com.esprit.gestionPI.persistence.PI</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
 </faces-config>
