@@ -6,19 +6,55 @@ xmlns:p="http://primefaces.org/ui"
 xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head></h:head> 
 <body> 
-<h:form id="form">
-<p:growl showDetail="true" sticky="true"></p:growl>
-<p:panel header="Create PI" toggleable="true">
-<h:panelGrid columns="3" cellpadding="4" cellspacing="4">
-<h:outputText value="Intitule" />
-<p:inputText id="intitule" value="#{pICtrl.pi.intitule}" required="true"></p:inputText>
-<p:message for="intitule"></p:message>
-<h:outputText value=" Description" />
-<p:inputText id="description" value="#{pICtrl.pi.description}" required="true"></p:inputText>
-<p:message for="description"></p:message>
-<p:commandButton value="Valider" action="#{pICtrl.doCreatePI()}" update="form"></p:commandButton>
-</h:panelGrid>
-</p:panel>
+<h:form>
+            
+ 
+
+    <p:tabView effect="clip" effectDuration="normal">
+
+        <p:tab title="AJOUT PI">
+           
+                <h:form id="form">
+                     <p:growl showDetail="true" sticky="true"></p:growl>
+                     <p:panel header="Create PI" toggleable="true">
+                        <h:panelGrid columns="3" cellpadding="4" cellspacing="4">
+                        <h:outputText value="Intitule" />
+                        <p:inputText id="intitule" value="#{pICtrl.pi.intitule}" required="true"></p:inputText>
+                        <p:message for="intitule"></p:message>
+                        <h:outputText value=" Description" />
+                        <p:inputText id="description" value="#{pICtrl.pi.description}" required="true"></p:inputText>
+                        <p:message for="description"></p:message>
+                        <p:commandButton value="Valider" action="#{pICtrl.doCreatePI()}" update="form"></p:commandButton>
+                        </h:panelGrid>
+                     </p:panel>
+              </h:form>
+        </p:tab>
+        <p:tab title="MODIFIER PI">
+               <h:form id="form1">
+                     <p:growl showDetail="true" sticky="true"></p:growl>
+                     <p:panel header="Modifier PI" toggleable="true">
+                        <h:panelGrid columns="3" cellpadding="4" cellspacing="4">
+                        <h:selectOneMenu value="#{pICtrl.selectedItem}" converter="omnifaces.SelectItemsConverter" required="true">  
+                        <f:selectItem itemLabel="Select One" itemValue="" />  
+                        <f:selectItems value="#{pICtrl.ToutPI()}"  itemValue="#{pICtrl.pi}" itemLabel="#{pICtrl.pi.intitule}"/> 
+                        <f:ajax render="form1" />
+                        </h:selectOneMenu>  
+                        <h:outputText value="Intitule" />
+                        <p:inputText id="intitule" value="#{selectedItem.intitule}" required="true"></p:inputText>
+                        <p:message for="intitule"></p:message>
+                        <h:outputText value=" Description" />
+                        <p:inputText  id="description" value="#{selectedItem.description}" required="true"></p:inputText>
+                        <p:message for="description"></p:message>
+                        <p:commandButton value="modifier" action="#{pICtrl.updatePI()}" update="form1"></p:commandButton>
+                        <p:commandButton value="supprimer" action="#{pICtrl.supprimerPI()}" update="form1"></p:commandButton>
+                        </h:panelGrid>
+                     </p:panel>
+              </h:form>
+            
+        </p:tab>
+    </p:tabView>
+
 </h:form>
+                    
 </body> 
 </f:view>

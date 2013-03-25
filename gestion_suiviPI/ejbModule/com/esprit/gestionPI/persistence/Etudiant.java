@@ -104,6 +104,79 @@ public class Etudiant implements Serializable {
 	public void setFichesEtudiant(Set<FicheEtudiant> fichesEtudiant) {
 		this.fichesEtudiant = fichesEtudiant;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((ID_ET == null) ? 0 : ID_ET.hashCode());
+		result = prime * result + ((classe == null) ? 0 : classe.hashCode());
+		result = prime * result
+				+ ((equipeEtudiant == null) ? 0 : equipeEtudiant.hashCode());
+		result = prime * result
+				+ ((fichesEtudiant == null) ? 0 : fichesEtudiant.hashCode());
+		result = prime * result + ((nom_ET == null) ? 0 : nom_ET.hashCode());
+		result = prime * result
+				+ ((prenom_ET == null) ? 0 : prenom_ET.hashCode());
+		result = prime * result
+				+ ((reponses == null) ? 0 : reponses.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Etudiant other = (Etudiant) obj;
+		if (ID_ET == null) {
+			if (other.ID_ET != null)
+				return false;
+		} else if (!ID_ET.equals(other.ID_ET))
+			return false;
+		if (classe == null) {
+			if (other.classe != null)
+				return false;
+		} else if (!classe.equals(other.classe))
+			return false;
+		if (equipeEtudiant == null) {
+			if (other.equipeEtudiant != null)
+				return false;
+		} else if (!equipeEtudiant.equals(other.equipeEtudiant))
+			return false;
+		if (fichesEtudiant == null) {
+			if (other.fichesEtudiant != null)
+				return false;
+		} else if (!fichesEtudiant.equals(other.fichesEtudiant))
+			return false;
+		if (nom_ET == null) {
+			if (other.nom_ET != null)
+				return false;
+		} else if (!nom_ET.equals(other.nom_ET))
+			return false;
+		if (prenom_ET == null) {
+			if (other.prenom_ET != null)
+				return false;
+		} else if (!prenom_ET.equals(other.prenom_ET))
+			return false;
+		if (reponses == null) {
+			if (other.reponses != null)
+				return false;
+		} else if (!reponses.equals(other.reponses))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Etudiant [ID_ET=" + ID_ET + ", nom_ET=" + nom_ET
+				+ ", prenom_ET=" + prenom_ET + ", classe=" + classe
+				+ ", fichesEtudiant=" + fichesEtudiant + ", equipeEtudiant="
+				+ equipeEtudiant + ", reponses=" + reponses + "]";
+	}
 	
 	
 	

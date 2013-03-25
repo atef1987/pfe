@@ -1,5 +1,6 @@
 package com.esprit.gestionPI.dao;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.ejb.Remote;
@@ -17,5 +18,6 @@ public interface PIDaoRemote {
 	PI findById(int id);
 	
 	Set<PI> findAll(); 
-
+	List<PI> findList();
+	PI getPIbyIntitule(String intitule);
 }

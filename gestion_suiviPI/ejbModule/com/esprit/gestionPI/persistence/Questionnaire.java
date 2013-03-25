@@ -69,6 +69,55 @@ public class Questionnaire implements Serializable {
 	public void setQuestions(Set<Question> questions) {
 		this.questions = questions;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((classe == null) ? 0 : classe.hashCode());
+		result = prime * result + idQuestion;
+		result = prime * result
+				+ ((question == null) ? 0 : question.hashCode());
+		result = prime * result
+				+ ((questions == null) ? 0 : questions.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Questionnaire other = (Questionnaire) obj;
+		if (classe == null) {
+			if (other.classe != null)
+				return false;
+		} else if (!classe.equals(other.classe))
+			return false;
+		if (idQuestion != other.idQuestion)
+			return false;
+		if (question == null) {
+			if (other.question != null)
+				return false;
+		} else if (!question.equals(other.question))
+			return false;
+		if (questions == null) {
+			if (other.questions != null)
+				return false;
+		} else if (!questions.equals(other.questions))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Questionnaire [idQuestion=" + idQuestion + ", question="
+				+ question + ", classe=" + classe + ", questions=" + questions
+				+ "]";
+	}
 	
 	
 	

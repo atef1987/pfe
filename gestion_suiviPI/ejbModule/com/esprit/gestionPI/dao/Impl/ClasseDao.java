@@ -39,6 +39,7 @@ EntityManager em;
 		
 		return (Set<Classe>) em.createQuery("select e from Classe e")
 				.getResultList();
+		
 	}
 
 }

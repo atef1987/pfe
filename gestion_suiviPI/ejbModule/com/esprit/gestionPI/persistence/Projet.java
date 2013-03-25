@@ -99,4 +99,76 @@ public class Projet implements Serializable {
 		this.enseignant = enseignant;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((dateCreation == null) ? 0 : dateCreation.hashCode());
+		result = prime * result
+				+ ((description == null) ? 0 : description.hashCode());
+		result = prime * result
+				+ ((enseignant == null) ? 0 : enseignant.hashCode());
+		result = prime
+				* result
+				+ ((equipesEtudiants == null) ? 0 : equipesEtudiants.hashCode());
+		result = prime * result + idProjet;
+		result = prime * result
+				+ ((intitule == null) ? 0 : intitule.hashCode());
+		result = prime * result + ((parties == null) ? 0 : parties.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Projet other = (Projet) obj;
+		if (dateCreation == null) {
+			if (other.dateCreation != null)
+				return false;
+		} else if (!dateCreation.equals(other.dateCreation))
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (enseignant == null) {
+			if (other.enseignant != null)
+				return false;
+		} else if (!enseignant.equals(other.enseignant))
+			return false;
+		if (equipesEtudiants == null) {
+			if (other.equipesEtudiants != null)
+				return false;
+		} else if (!equipesEtudiants.equals(other.equipesEtudiants))
+			return false;
+		if (idProjet != other.idProjet)
+			return false;
+		if (intitule == null) {
+			if (other.intitule != null)
+				return false;
+		} else if (!intitule.equals(other.intitule))
+			return false;
+		if (parties == null) {
+			if (other.parties != null)
+				return false;
+		} else if (!parties.equals(other.parties))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Projet [idProjet=" + idProjet + ", intitule=" + intitule
+				+ ", description=" + description + ", dateCreation="
+				+ dateCreation + ", parties=" + parties + ", equipesEtudiants="
+				+ equipesEtudiants + ", enseignant=" + enseignant + "]";
+	}
+
 }

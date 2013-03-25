@@ -54,6 +54,45 @@ public class FicheEquipe extends Fiche implements Serializable {
 	public void setFicheEquipe(FicheEquipe ficheEquipe) {
 		this.ficheEquipe = ficheEquipe;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result
+				+ ((ficheEquipe == null) ? 0 : ficheEquipe.hashCode());
+		result = prime * result + Float.floatToIntBits(note);
+		result = prime * result + travailNonRealiser;
+		result = prime * result + travailRealiser;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FicheEquipe other = (FicheEquipe) obj;
+		if (ficheEquipe == null) {
+			if (other.ficheEquipe != null)
+				return false;
+		} else if (!ficheEquipe.equals(other.ficheEquipe))
+			return false;
+		if (Float.floatToIntBits(note) != Float.floatToIntBits(other.note))
+			return false;
+		if (travailNonRealiser != other.travailNonRealiser)
+			return false;
+		if (travailRealiser != other.travailRealiser)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "FicheEquipe [travailRealiser=" + travailRealiser
+				+ ", travailNonRealiser=" + travailNonRealiser + ", note="
+				+ note + ", ficheEquipe=" + ficheEquipe + "]";
+	}
 	
 	
    

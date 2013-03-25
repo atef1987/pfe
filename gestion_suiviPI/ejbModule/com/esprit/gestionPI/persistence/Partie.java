@@ -80,6 +80,61 @@ public class Partie implements Serializable {
 	public void setFiche(Fiche fiche) {
 		this.fiche = fiche;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + IdPartie;
+		result = prime * result
+				+ ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((fiche == null) ? 0 : fiche.hashCode());
+		result = prime * result
+				+ ((intitule == null) ? 0 : intitule.hashCode());
+		result = prime * result + ((projet == null) ? 0 : projet.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Partie other = (Partie) obj;
+		if (IdPartie != other.IdPartie)
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (fiche == null) {
+			if (other.fiche != null)
+				return false;
+		} else if (!fiche.equals(other.fiche))
+			return false;
+		if (intitule == null) {
+			if (other.intitule != null)
+				return false;
+		} else if (!intitule.equals(other.intitule))
+			return false;
+		if (projet == null) {
+			if (other.projet != null)
+				return false;
+		} else if (!projet.equals(other.projet))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Partie [IdPartie=" + IdPartie + ", intitule=" + intitule
+				+ ", description=" + description + ", projet=" + projet
+				+ ", fiche=" + fiche + "]";
+	}
 	
 	
 	

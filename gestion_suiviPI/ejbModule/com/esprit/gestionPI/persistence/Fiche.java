@@ -60,6 +60,52 @@ public class Fiche implements Serializable {
 	public void setModelFiche(ModelFiche modelFiche) {
 		this.modelFiche = modelFiche;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + IdFiche;
+		result = prime * result
+				+ ((enseignant == null) ? 0 : enseignant.hashCode());
+		result = prime * result
+				+ ((modelFiche == null) ? 0 : modelFiche.hashCode());
+		result = prime * result + ((partie == null) ? 0 : partie.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Fiche other = (Fiche) obj;
+		if (IdFiche != other.IdFiche)
+			return false;
+		if (enseignant == null) {
+			if (other.enseignant != null)
+				return false;
+		} else if (!enseignant.equals(other.enseignant))
+			return false;
+		if (modelFiche == null) {
+			if (other.modelFiche != null)
+				return false;
+		} else if (!modelFiche.equals(other.modelFiche))
+			return false;
+		if (partie == null) {
+			if (other.partie != null)
+				return false;
+		} else if (!partie.equals(other.partie))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Fiche [IdFiche=" + IdFiche + ", partie=" + partie
+				+ ", enseignant=" + enseignant + ", modelFiche=" + modelFiche
+				+ "]";
+	}
 	
 	
 	

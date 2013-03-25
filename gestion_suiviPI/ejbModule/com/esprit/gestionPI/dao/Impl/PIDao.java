@@ -1,5 +1,6 @@
 package com.esprit.gestionPI.dao.Impl;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.ejb.Stateless;
@@ -42,6 +43,19 @@ public class PIDao implements PIDaoRemote {
 	public Set<PI> findAll() {
 
 		return (Set<PI>) em.createQuery("select e from PI e").getResultList();
+	}
+
+	@Override
+	public List<PI> findList() {
+		
+		return em.createQuery("select e from PI e").getResultList();
+	}
+
+	@Override
+	public PI getPIbyIntitule(String intitule) {
+		
+		return   (PI) em.createNativeQuery(
+				"select * FROM PI where intitule ='"+intitule+"'", PI.class).getSingleResult();
 	}
 
 }

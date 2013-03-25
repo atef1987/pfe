@@ -66,6 +66,52 @@ public class Critere implements Serializable {
 	public void setModelFiches(Set<ModelFiche> modelFiches) {
 		this.modelFiches = modelFiches;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idCritere;
+		result = prime * result + ((libelle == null) ? 0 : libelle.hashCode());
+		result = prime * result
+				+ ((modelFiches == null) ? 0 : modelFiches.hashCode());
+		result = prime * result
+				+ ((noteCritere == null) ? 0 : noteCritere.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Critere other = (Critere) obj;
+		if (idCritere != other.idCritere)
+			return false;
+		if (libelle == null) {
+			if (other.libelle != null)
+				return false;
+		} else if (!libelle.equals(other.libelle))
+			return false;
+		if (modelFiches == null) {
+			if (other.modelFiches != null)
+				return false;
+		} else if (!modelFiches.equals(other.modelFiches))
+			return false;
+		if (noteCritere == null) {
+			if (other.noteCritere != null)
+				return false;
+		} else if (!noteCritere.equals(other.noteCritere))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Critere [idCritere=" + idCritere + ", libelle=" + libelle
+				+ ", noteCritere=" + noteCritere + ", modelFiches="
+				+ modelFiches + "]";
+	}
 	
 	
 	

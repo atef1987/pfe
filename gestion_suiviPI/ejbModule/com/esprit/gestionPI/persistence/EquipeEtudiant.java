@@ -89,6 +89,67 @@ public class EquipeEtudiant implements Serializable {
 	public void setFichesEquipes(Set<FicheEquipe> fichesEquipes) {
 		this.fichesEquipes = fichesEquipes;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + IdEquipe;
+		result = prime * result
+				+ ((enseignant == null) ? 0 : enseignant.hashCode());
+		result = prime * result
+				+ ((etudiants == null) ? 0 : etudiants.hashCode());
+		result = prime * result
+				+ ((fichesEquipes == null) ? 0 : fichesEquipes.hashCode());
+		result = prime * result
+				+ ((intitule == null) ? 0 : intitule.hashCode());
+		result = prime * result + ((projet == null) ? 0 : projet.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EquipeEtudiant other = (EquipeEtudiant) obj;
+		if (IdEquipe != other.IdEquipe)
+			return false;
+		if (enseignant == null) {
+			if (other.enseignant != null)
+				return false;
+		} else if (!enseignant.equals(other.enseignant))
+			return false;
+		if (etudiants == null) {
+			if (other.etudiants != null)
+				return false;
+		} else if (!etudiants.equals(other.etudiants))
+			return false;
+		if (fichesEquipes == null) {
+			if (other.fichesEquipes != null)
+				return false;
+		} else if (!fichesEquipes.equals(other.fichesEquipes))
+			return false;
+		if (intitule == null) {
+			if (other.intitule != null)
+				return false;
+		} else if (!intitule.equals(other.intitule))
+			return false;
+		if (projet == null) {
+			if (other.projet != null)
+				return false;
+		} else if (!projet.equals(other.projet))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "EquipeEtudiant [IdEquipe=" + IdEquipe + ", intitule="
+				+ intitule + ", projet=" + projet + ", enseignant="
+				+ enseignant + ", etudiants=" + etudiants + ", fichesEquipes="
+				+ fichesEquipes + "]";
+	}
 	
 	
    

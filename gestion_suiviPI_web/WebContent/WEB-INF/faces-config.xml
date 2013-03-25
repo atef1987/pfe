@@ -21,5 +21,15 @@
    <property-class>com.esprit.gestionPI.persistence.PI</property-class>
    <value/>
   </managed-property>
+  <managed-property>
+   <property-name>selectItems</property-name>
+   <property-class>java.util.List</property-class>
+   <value/>
+  </managed-property>
+  <managed-property>
+   <property-name>selectedItem</property-name>
+   <property-class>com.esprit.gestionPI.persistence.PI</property-class>
+   <value/>
+  </managed-property>
  </managed-bean>
 </faces-config>
