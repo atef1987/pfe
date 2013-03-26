@@ -1,5 +1,6 @@
 package com.esprit.gestionPI.dao.Impl;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.ejb.Stateless;
@@ -41,6 +42,11 @@ EntityManager em;
 	public Set<Enseignant> findAll() {
 		
 		return (Set<Enseignant>) em.createQuery("select e from Enseignant e").getResultList();
+	}
+	
+	public List<Enseignant> findallList(){
+		return em.createNamedQuery("allList").getResultList();
+		
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.esprit.gestionPI.dao;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.ejb.Remote;
@@ -17,4 +18,5 @@ public interface EnseignantDaoRemote {
 	Enseignant findById(int id);
 	
 	Set<Enseignant> findAll(); 
+	List<Enseignant>findallList();
 }

@@ -32,4 +32,19 @@
    <value/>
   </managed-property>
  </managed-bean>
+ <managed-bean>
+  <managed-bean-name>pICtrl1</managed-bean-name>
+  <managed-bean-class>crtl.PICtrl1</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+  <managed-property>
+   <property-name>coordinateur</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+  <managed-property>
+   <property-name>pi</property-name>
+   <property-class>com.esprit.gestionPI.persistence.PI</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
 </faces-config>
