@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -17,6 +18,7 @@ import javax.persistence.OneToMany;
  * 
  */
 @Entity
+@NamedQuery(name = "allList", query = "select p from Enseignant p")
 public class Enseignant implements Serializable {
 
 	private String id_ens;

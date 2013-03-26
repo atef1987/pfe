@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui" 
+xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head></h:head> 
+<body> 
+<h:form id="formAjoutPI" >
+<p:growl showDetail="true" sticky="true"></p:growl>
+	<p:panel header="Ajouter un nouveau PI" toggleable="true" id="panel">
+		<h:panelGrid columns="3" cellpadding="4" cellspacing="4">
+		
+		<h:outputLabel for="PI" value="Nom PI" style="font-weight:bold"/>		
+		<p:inputText id="PI" value="#{pICtrl1.pi.intitule}" required="true"/>
+		<p:message for="PI"></p:message>
+		
+		<h:outputLabel for="Description" value="Description" style="font-weight:bold"/>		
+		<p:inputText id="Description" value="#{pICtrl1.pi.description}" required="true"/>
+		<p:message for="Description"></p:message>
+		
+		<h:outputLabel for="Coordinateur" value="Coordinateur :" style="font-weight:bold"/>
+		<p:autoComplete id="Coordinateur" value="#{pICtrl1.coordinateur}" completeMethod="#{pICtrl1.chargerListEnseignant}" required="true"/>		
+		<p:message for="Coordinateur"></p:message>
+		
+		<p:commandButton id="btn" value="Save" action="#{pICtrl1.doCreatePI()}" update="formAjoutPI"/> 
+		</h:panelGrid>
+	</p:panel>
+</h:form>		
+</body> 
+</f:view>
