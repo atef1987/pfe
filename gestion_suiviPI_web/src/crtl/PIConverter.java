@@ -1,5 +1,6 @@
 package crtl;
 
+import javax.ejb.EJB;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -11,12 +12,13 @@ import com.esprit.gestionPI.persistence.PI;
 @FacesConverter(value="PIConverter")
 public class PIConverter implements Converter {
 
+	@EJB
 	PIDaoRemote daoRemote;
 
 	public Object getAsObject(FacesContext context, UIComponent component,
 			String value) {
 	   PICtrl ctrl=null;
-	   ctrl.getProxy();
+//	   ctrl.getProxy();
 		PI piByIntitule = daoRemote.getPIbyIntitule(value);
 		return piByIntitule;
 	}

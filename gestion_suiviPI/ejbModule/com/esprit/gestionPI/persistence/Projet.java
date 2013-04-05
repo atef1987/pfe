@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  * Entity implementation class for Entity: Projet
@@ -28,6 +30,14 @@ public class Projet implements Serializable {
 	private Set<Partie> parties;	
 	private Set<EquipeEtudiant> equipesEtudiants;
 	
+	private Video video;
+	private SpecificationDocument document;
+	
+
+
+	private Photo photo;
+	
+	
 	private Enseignant enseignant;
 	private static final long serialVersionUID = 1L;
 
@@ -36,16 +46,40 @@ public class Projet implements Serializable {
 		parties = new HashSet<Partie>();
 		equipesEtudiants = new HashSet<EquipeEtudiant>();
 	}
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getIdProjet() {
 		return this.idProjet;
 	}
-
+	
 	public void setIdProjet(int idProjet) {
 		this.idProjet = idProjet;
 	}
+	@OneToOne(mappedBy="projet", cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	public SpecificationDocument getDocument() {
+		return document;
+	}
+
+	public void setDocument(SpecificationDocument document) {
+		this.document = document;
+	}
+	@OneToOne(mappedBy="projet", cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	public Video getVideo() {
+		return video;
+	}
+	
+	public void setVideo(Video video) {
+		this.video = video;
+	}
+	@OneToOne(mappedBy="projet", cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	public Photo getPhoto() {
+		return photo;
+	}
+	
+	public void setPhoto(Photo photo) {
+		this.photo = photo;
+	}
+
 
 	public String getIntitule() {
 		return this.intitule;
@@ -170,5 +204,6 @@ public class Projet implements Serializable {
 				+ dateCreation + ", parties=" + parties + ", equipesEtudiants="
 				+ equipesEtudiants + ", enseignant=" + enseignant + "]";
 	}
+
 
 }

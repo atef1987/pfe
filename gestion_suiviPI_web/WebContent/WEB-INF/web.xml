@@ -3,12 +3,45 @@
   <display-name>gestion_suiviPI_web</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+<!--     <welcome-file>index.htm</welcome-file> -->
+<!--     <welcome-file>index.jsp</welcome-file> -->
+<!--     <welcome-file>default.html</welcome-file> -->
+<!--     <welcome-file>default.htm</welcome-file> -->
+<!--     <welcome-file>default.jsp</welcome-file> -->
   </welcome-file-list>
+   
+   
+   
+   <!-- Primefaces context parameters -->
+   <context-param>
+      <param-name>primefaces.SKIN</param-name>
+      <param-value>none</param-value>
+   </context-param>
+   <context-param>
+      <param-name>primefaces.THEME</param-name>
+      <param-value>afterdark</param-value>
+   </context-param>
+   <filter>
+      <filter-name>PrimeFaces FileUpload Filter</filter-name>
+      <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+      <init-param>
+         <param-name>thresholdSize</param-name>
+<!--          <param-value>5242880</param-value> -->
+          <param-value>26250000</param-value>
+      </init-param>
+      <init-param>
+            <param-name>uploadDirectory</param-name>
+            <param-value>C:\jboss-as-7.1.1.Final\standalone\tmp</param-value>
+        </init-param>
+   </filter>
+   <filter-mapping>
+      <filter-name>PrimeFaces FileUpload Filter</filter-name>
+      <servlet-name>Faces Servlet</servlet-name>
+         
+         <dispatcher>FORWARD</dispatcher>
+         <dispatcher>REQUEST</dispatcher>
+         <dispatcher>ERROR</dispatcher>
+   </filter-mapping>
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -18,4 +51,6 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
   </servlet-mapping>
+  
+ 
 </web-app>

@@ -23,9 +23,19 @@ import com.esprit.gestionPI.persistence.PI;
 @SessionScoped
 public class PICtrl {
 	private PI pi;
+	private String item;
+	public String getItem() {
+		return item;
+	}
+
+	public void setItem(String item) {
+		this.item = item;
+	}
+
 	private List<PI> pis;
 	 private List<SelectItem> selectItems;
 	 private PI selectedItem;
+	 
 
 	public PI getSelectedItem() {
 		return selectedItem;
@@ -62,7 +72,7 @@ public class PICtrl {
 
 	public String doCreatePI() {
 		FacesContext context = FacesContext.getCurrentInstance();
-		getProxy();
+//		getProxy();
 		try {
 			remote.add(pi);
 			pi = new PI();
@@ -80,7 +90,7 @@ public class PICtrl {
 	public List<PI> ToutPI() {
 
 		FacesContext context = FacesContext.getCurrentInstance();
-		getProxy();
+//		getProxy();
 		try {
 			pis = remote.findList();
 			pi = new PI();
@@ -96,7 +106,7 @@ public class PICtrl {
 	}
 	public void updatePI() {
 		FacesContext context = FacesContext.getCurrentInstance();
-		getProxy();
+//		getProxy();
 		try {
 			remote.update(pi);
 			pi = new PI();
@@ -111,7 +121,7 @@ public class PICtrl {
 	}
 	public void supprimerPI() {
 		FacesContext context = FacesContext.getCurrentInstance();
-		getProxy();
+//		getProxy();
 		try {
 			remote.delete(pi.getIdPI());
 			pi = new PI();
@@ -126,28 +136,28 @@ public class PICtrl {
 	}
 	
 
-	public void getProxy() {
-		Properties properties = new Properties();
-		// properties.put("java.naming.factory.url.pkgs",
-		// "org.jboss.ejb.client.naming");
-		properties.put("java.naming.factory.initial",
-				"org.jboss.naming.remote.client.InitialContextFactory");
-		properties.put("java.naming.provider.url", "remote://localhost:4447");
-		// properties.put("jboss.naming.client.ejb.context", true);
-		// properties.put("jboss.naming.client.connect.options.org.xnio.Options.SASL_POLICY_NOPLAINTEXT",
-		// false);
-		properties.put(Context.SECURITY_PRINCIPAL, "user1");// user name pour un
-															// simple user
-		properties.put(Context.SECURITY_CREDENTIALS, "user2");// password
-		try {
-			Context context = new InitialContext(properties);
-			remote = (PIDaoRemote) context
-					.lookup("gestion_suiviPI/PIDao!com.esprit.gestionPI.dao.PIDaoRemote");
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	public void getProxy() {
+//		Properties properties = new Properties();
+//		// properties.put("java.naming.factory.url.pkgs",
+//		// "org.jboss.ejb.client.naming");
+//		properties.put("java.naming.factory.initial",
+//				"org.jboss.naming.remote.client.InitialContextFactory");
+//		properties.put("java.naming.provider.url", "remote://localhost:4447");
+//		// properties.put("jboss.naming.client.ejb.context", true);
+//		// properties.put("jboss.naming.client.connect.options.org.xnio.Options.SASL_POLICY_NOPLAINTEXT",
+//		// false);
+//		properties.put(Context.SECURITY_PRINCIPAL, "user1");// user name pour un
+//															// simple user
+//		properties.put(Context.SECURITY_CREDENTIALS, "user2");// password
+//		try {
+//			Context context = new InitialContext(properties);
+//			remote = (PIDaoRemote) context
+//					.lookup("gestion_suiviPI/PIDao!com.esprit.gestionPI.dao.PIDaoRemote");
+//		} catch (NamingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 
 	public PI getPi() {
 		return pi;

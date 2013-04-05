@@ -34,7 +34,7 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
                      <p:growl showDetail="true" sticky="true"></p:growl>
                      <p:panel header="Modifier PI" toggleable="true">
                         <h:panelGrid columns="3" cellpadding="4" cellspacing="4">
-                        <h:selectOneMenu value="#{pICtrl.selectedItem}" converter="omnifaces.SelectItemsConverter" required="true">  
+                        <h:selectOneMenu value="#{pICtrl.selectedItem}" converter="#{genericSecuredConverter}">  
                         <f:selectItem itemLabel="Select One" itemValue="" />  
                         <f:selectItems value="#{pICtrl.ToutPI()}"  itemValue="#{pICtrl.pi}" itemLabel="#{pICtrl.pi.intitule}"/> 
                         <f:ajax render="form1" />

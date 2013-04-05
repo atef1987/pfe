@@ -21,6 +21,9 @@
 	<class>com.esprit.gestionPI.persistence.Question</class>
 	<class>com.esprit.gestionPI.persistence.Role</class>
 	<class>com.esprit.gestionPI.persistence.Reponse</class>
+	<class>com.esprit.gestionPI.persistence.SpecificationDocument</class>
+	<class>com.esprit.gestionPI.persistence.Photo</class>
+	<class>com.esprit.gestionPI.persistence.Video</class>
 	<properties>
 	<property name="hibernate.hbm2ddl.auto" value="create"/>
 	</properties>

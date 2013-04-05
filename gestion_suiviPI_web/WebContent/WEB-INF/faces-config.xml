@@ -2,6 +2,10 @@
 <faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+ <converter>
+  <converter-id>1</converter-id>
+  <converter-class>crtl.GenericSecuredConverter</converter-class>
+ </converter>
  <managed-bean>
   <managed-bean-name>classeCtrl</managed-bean-name>
   <managed-bean-class>crtl.ClasseCtrl</managed-bean-class>
@@ -29,6 +33,61 @@
   <managed-property>
    <property-name>selectedItem</property-name>
    <property-class>com.esprit.gestionPI.persistence.PI</property-class>
+   <value/>
+  </managed-property>
+  <managed-property>
+   <property-name>item</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>projetCtrl</managed-bean-name>
+  <managed-bean-class>crtl.ProjetCtrl</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>projet</property-name>
+   <property-class>com.esprit.gestionPI.persistence.Projet</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>fileUploadController</managed-bean-name>
+  <managed-bean-class>crtl.FileUploadController</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>destination</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>genericSecuredConverter</managed-bean-name>
+  <managed-bean-class>crtl.GenericSecuredConverter</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+  <managed-property>
+   <property-name>temporaryStore</property-name>
+   <property-class>java.util.Map</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>fileUploadController1</managed-bean-name>
+  <managed-bean-class>crtl.FileUploadController1</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>destination</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>fileUploadController2</managed-bean-name>
+  <managed-bean-class>crtl.FileUploadController2</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>destination</property-name>
+   <property-class>java.lang.String</property-class>
    <value/>
   </managed-property>
  </managed-bean>
