@@ -1,0 +1,35 @@
+
+/* En-Tête */
+  #masthead {
+    position:relative;
+    padding:10px;
+    background-color:#FFF;
+    height: 50px;
+    border: 1px #000 solid;
+    margin-right:18%;
+     }
+
+/********************************************************************************
+Sidebar
+*******************************************************************************/
+/* Navigation et liens */
+  #sidebar {
+    float:left;
+    padding:12px;
+    width:14%;
+     background-color:#fcb968;  
+    border: 1px #c0c0c0 solid;
+     }
+
+/********************************************************************************
+Content
+*******************************************************************************/       
+    /* Contenu */
+  #content {
+    position:relative;
+    margin-left:16%;
+    margin-right:18%;
+    padding:12px;
+    border: 2px #fcb968 solid;
+     }
+

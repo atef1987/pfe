@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/templates/template.xhtml">
+	<ui:define name="metadata" >
+	</ui:define>
+	<ui:define name="content"  >
+		<h:form id="form">
+<p:growl showDetail="true" sticky="true"></p:growl>
+<p:panel header="Create Classe" toggleable="true">
+<h:panelGrid columns="3" cellpadding="4" cellspacing="4">
+<h:outputText value="Intitule" />
+<p:inputText id="intitule" value="#{classeCtrl.classe.intitule}" required="true"></p:inputText>
+<p:message for="intitule"></p:message>
+<h:outputText value=" Description" />
+<p:inputText id="description" value="#{classeCtrl.classe.description}" required="true"></p:inputText>
+<p:message for="description"></p:message>
+<p:commandButton value="Valider" action="#{classeCtrl.doCreateClasse()}" update="form"></p:commandButton>
+</h:panelGrid>
+</p:panel>
+</h:form>
+	</ui:define >
+</ui:composition>

@@ -17,11 +17,39 @@
     
         
 
+<p align="center"  >
+<h:form enctype="multipart/form-data">
+  <p:panel header="Choisissez un poster" toggleable="true">
+    
+    <p:fileUpload fileUploadListener="#{fileUploadController.upload}"
+            mode="advanced"
+            update="messages" 
+            multiple="true"
+            sizeLimit="100000" 
+            allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/>
 
+    <p:growl id="messages" showDetail="true"/>
+    </p:panel>
 
- <h:form id="form" >
+</h:form>
+<h:form enctype="multipart/form-data" >
+     <p:panel header="Choisissez un document" toggleable="true">
+    
+
+    <p:fileUpload fileUploadListener="#{fileUploadController2.upload}" 
+            mode="advanced"
+            update="messages" 
+            multiple="true"
+            sizeLimit="100000" 
+            allowTypes="/(\.|\/)(docx|pdf)$/"/>
+
+    <p:growl id="messages" showDetail="true"/>
+</p:panel>
+</h:form>
+
+ <h:form id="form"  >
   <p:growl showDetail="true" sticky="true"></p:growl>
-  <p:panel header="Create Projet" toggleable="true">
+  <p:panel header="Create Projet" toggleable="true" >
     <h:panelGrid columns="3" cellpadding="4" cellspacing="4">
 
       <h:outputText value="Intitule" />
@@ -40,42 +68,14 @@
  
   
  </h:form>
- <h:form enctype="multipart/form-data">
-  <p:panel header="Choisissez un poster" toggleable="true">
-    <h2 align="center"><h:outputText value="Choisissez un poster "  /></h2>
-
-    <p:fileUpload fileUploadListener="#{fileUploadController.upload}"
-            mode="advanced"
-            update="messages" 
-            multiple="true"
-            sizeLimit="100000" 
-            allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/>
-
-    <p:growl id="messages" showDetail="true"/>
-    </p:panel>
-
-</h:form>
-<h:form enctype="multipart/form-data" >
-     <p:panel header="Choisissez un document" toggleable="true">
-    <h2 align="center"><h:outputText value="Choisissez un document "  /></h2>
-
-    <p:fileUpload fileUploadListener="#{fileUploadController2.upload}" 
-            mode="advanced"
-            update="messages" 
-            multiple="true"
-            sizeLimit="100000" 
-            allowTypes="/(\.|\/)(docx|pdf)$/"/>
-
-    <p:growl id="messages" showDetail="true"/>
-</p:panel>
-</h:form>
  
-
+ 
+ </p>
     </p:layoutUnit>
 
 </p:layout>          
 
- 
+
 
      
      

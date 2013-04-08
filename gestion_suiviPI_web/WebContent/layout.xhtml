@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+
+      xmlns:f="http://java.sun.com/jsf/core"
+
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+     
+      >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h:link rel="StyleSheet" href="stylesheet/jsf_style.css" text="text/css" />
+
+<title>
+<ui:insert name="header">
+Using templates in JSF 2
+</ui:insert>
+</title>
+</head>
+<body>
+<!-- +++++++++++++++++++MASTHEAD++++++++++++++++++++++++++++++++++++++++++++ -->
+<div id="masthead">
+
+<h1 align="center">
+<ui:insert name="header">
+Using templates in JSF 2
+</ui:insert>
+</h1>
+
+</div>
+   
+<!-- +++++++++++++++++++SIDEBAR AND LINKS ++++++++++++++++++++++++++++++++++ -->
+<div id="sidebar">
+<p><a href="formation.jsf">Formations</a></p>
+
+<p><a href="#">Testing</a></p>
+
+<p><a href="#">JSF 2</a></p>
+
+</div>
+
+<!-- ++++++++++++++++++++++CONTENT++++++++++++++++++++++++++++++++++++++++++ -->
+
+<div id="content">
+<p>Line1</p>
+<p>Line2</p>
+<p>Line3</p>
+</div>   
+</body>
+</html>

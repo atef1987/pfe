@@ -1,0 +1,28 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<center>
+		<h:outputText value="#{msg['header.title']}" />
+	<script type="text/javascript"> 
+var Img=new Array; 
+Img[0]="images/esprit1.jpg"; 
+Img[1]="images/esprit1.jpg"; 
+Img[2]="images/esprit1.jpg"; 
+
+var i=0;
+ 
+function change(index) { 
+document.getElementById('pic').src=Img[index]; 
+i++; 
+if (i >= Img.length)i=0;
+} 
+setInterval('change(i)',10); 
+</script>
+<img src="images/esprit1.jpg" id="pic" align="top">
+</img>
+	</center>
+</ui:composition>

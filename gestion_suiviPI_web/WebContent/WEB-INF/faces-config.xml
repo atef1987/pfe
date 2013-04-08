@@ -9,7 +9,7 @@
  <managed-bean>
   <managed-bean-name>classeCtrl</managed-bean-name>
   <managed-bean-class>crtl.ClasseCtrl</managed-bean-class>
-  <managed-bean-scope>session</managed-bean-scope>
+  <managed-bean-scope>view</managed-bean-scope>
   <managed-property>
    <property-name>classe</property-name>
    <property-class>com.esprit.gestionPI.persistence.Classe</property-class>

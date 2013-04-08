@@ -7,6 +7,7 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -15,7 +16,7 @@ import javax.naming.NamingException;
 import com.esprit.gestionPI.dao.ClasseDaoRemote;
 import com.esprit.gestionPI.persistence.Classe;
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class ClasseCtrl {
 	
 	

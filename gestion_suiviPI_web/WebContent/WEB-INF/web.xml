@@ -18,6 +18,10 @@
       <param-value>none</param-value>
    </context-param>
    <context-param>
+    <param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>
+    <param-value>*.xhtml</param-value>
+  </context-param> 
+   <context-param>
       <param-name>primefaces.THEME</param-name>
       <param-value>afterdark</param-value>
    </context-param>
