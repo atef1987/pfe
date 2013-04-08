@@ -16,4 +16,5 @@ public interface ProjetDaoRemote {
 	Projet findById(int id);
 	
 	Set<Projet> findAll(); 
+
 }
